@@ -36,10 +36,13 @@ int main(int argc, char** argv)
 
 	sts = session.QueryVersion(&ver);
 	
-
-	printf("\n\nImplementation: %s \t\t API Version: %d.%d\n",
-		(impl == MFX_IMPL_SOFTWARE) ? "SOFTWARE" : "HARDWARE",
-		ver.Major, ver.Minor);
+	if (sts == MFX_ERR_NONE) {
+		printf("\n\nImplementation: %s \t\t API version: %d.%d\n",
+			(impl == MFX_IMPL_SOFTWARE) ? "SOFTWARE" : "HARDWARE",
+			ver.Major, ver.Minor);
+	}
+	else
+		printf("\nIntel Media SDK is unsupported");
 
 	session.Close();
 	std::cout << "Press a key";
