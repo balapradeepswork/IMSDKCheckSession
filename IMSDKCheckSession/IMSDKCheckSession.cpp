@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 	sts = session.QueryVersion(&ver);
 	
 	if (sts == MFX_ERR_NONE) {
-		printf("\n\nImplementation: %s \t\t API version: %d.%d\n",
+		printf("\n\nImplementation: %s \t\t API Version: %d.%d\n",
 			(impl == MFX_IMPL_SOFTWARE) ? "SOFTWARE" : "HARDWARE",
 			ver.Major, ver.Minor);
 	}
